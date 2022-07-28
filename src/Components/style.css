@@ -1,0 +1,404 @@
+* a {
+    text-decoration: none;
+}
+
+section {
+    padding: 2rem 5%;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 123;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: tomato;
+}
+
+.navbarActive {
+    transition: 300ms ease-out;
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 10rem;
+    background: black;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+#searc {
+    position: relative;
+}
+
+#searc input {
+    width: 20rem;
+    padding: .3rem;
+    font-size: 1rem;
+    outline: none;
+    color: tomato;
+}
+
+#searc i {
+    position: absolute;
+    top: 25%;
+    color: black;
+    right: 4%;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+#searc i:hover {
+    color: tomato;
+}
+
+.navbarActive a {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbarActive a:hover {
+    color: tomato;
+}
+
+.navbarActive.active {
+    right: 0;
+    transition: 300ms;
+}
+
+.logo span {
+    color: tomato;
+    padding: 0rem .5rem;
+    font-size: 1.5rem;
+}
+
+.logo span:hover {
+    color: white;
+}
+
+.logo img {
+    height: 3rem;
+}
+
+.icons {
+    display: none;
+}
+
+.icons div {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.icons div:hover {
+    color: tomato;
+}
+
+header .search-form {
+    position: absolute;
+    top: 101%;
+    right: 10%;
+    background: white;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+header .search-form.active {
+    transform: scaleY(1);
+    transition: 300ms;
+}
+
+header .search-form input {
+    width: 25rem;
+    height: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    position: relative;
+    outline: none;
+}
+
+header .search-form label {
+    position: absolute;
+    right: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+header .search-form label:hover {
+    color: tomato;
+}
+
+/* Main Section */
+
+.main {
+    margin-top: 15vh;
+    min-height: 100vh;
+    background: url("https://www.teahub.io/photos/full/283-2837480_high-resolution-restaurant-background-images-hd.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 600px;
+    position: relative;
+}
+
+.content {
+    margin: 10% 10%;
+}
+
+.content h3 {
+    font-weight: 700;
+    color: rgb(93, 78, 182);
+}
+
+.content h3 span {
+    color: white;
+}
+
+.content h1 span {
+    color: tomato;
+}
+
+.content h1 {
+    color: white;
+}
+
+.content .btn {
+    background-color: rgb(93, 78, 182);
+    color: white;
+}
+
+.content .btn:hover {
+    background-color: tomato;
+}
+
+/* Search Result */
+#sea{
+    position: absolute;
+    top:10%;
+    right:30%;
+    background-color: white;
+}
+#result li{
+list-style: none;
+color:rgb(93, 78, 182);
+}
+
+/* Offers Section */
+#offer {
+    background-color: black;
+    text-align: center;
+}
+
+#offer h1 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 8vh 0;
+}
+
+#offer h1 span {
+    color: tomato;
+}
+
+#offer #box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+}
+
+#box-container .box {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#box-container .box:hover {
+    transform: scale(1.05);
+}
+
+#box-container .box img {
+    height: 10rem;
+}
+
+#box-container .box h3 {
+    color: rgb(212, 64, 64);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+#box-container .box .price {
+    color: tomato;
+    font-size: 1rem;
+}
+
+#box-container .box .price span {
+    font-size: .9rem;
+    color: white;
+    text-decoration: line-through;
+    font-weight: lighter;
+}
+
+/* LogIn section */
+
+.loginContainer {
+    width: 40%;
+    border: 1px solid white;
+    text-align: center;
+    background: black;
+    color: tomato;
+    padding: 2% 5%;
+    opacity: .8;
+    border-radius: 20px;
+    position: absolute;
+    top: 5%;
+    left: 500%;
+   
+}
+.loginContainer.active{
+    left:50%;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.login input {
+    width: "70%";
+    margin: auto;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    outline-color: tomato;
+}
+
+.loginContainer .btn {
+    width: 40%;
+    margin: auto;
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.loginContainer .btn:hover {
+    border-color: rgb(93, 78, 182);
+    transform: scale(1.05);
+}
+.login-register-text a:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+/* Sign UP section */
+
+.signContainer {
+    width: 40%;
+    border: 1px solid white;
+    text-align: center;
+    background: black;
+    color: tomato;
+    padding: 2% 5%;
+    opacity: .8;
+    border-radius: 20px;
+    position: absolute;
+    top: 2%;
+    left: 500%;
+   
+}
+.signContainer.active{
+    left:50%;
+}
+
+.sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.sign input {
+    width: "70%";
+    margin: auto;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    outline-color: tomato;
+}
+
+.signContainer .btn {
+    width: 40%;
+    margin: auto;
+    border: 1px solid white;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.signContainer .btn:hover {
+    border-color: rgb(93, 78, 182);
+    transform: scale(1.05);
+}
+
+
+
+
+@media (max-width:550px) {
+    .loginContainer.active{
+        width: 90%;
+        margin: auto;
+        left:5%;
+    }
+    .signContainer.active{
+        width: 90%;
+        margin: auto;
+        left:5%;
+    }
+    .icons {
+        display: block;
+    }
+
+    header .navbar {
+        display: none;
+    }
+
+    header .search-form {
+        right: 1rem;
+    }
+
+    .content {
+        width: 70vw;
+        margin: 30% 6%;
+    }
+
+    .content h1 {
+        color: rgb(106, 86, 216);
+    }
+
+    .content a {
+        margin-top: 10%;
+    }
+
+
+}
