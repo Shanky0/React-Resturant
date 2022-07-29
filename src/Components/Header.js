@@ -4,6 +4,8 @@ import data from './test.json';
 
 const Header = () => {
   const input = () => {
+    document.querySelector("#result").style.display = "block";
+    document.querySelector("#detailContainer").style.display = "none";
     let input = document.querySelector("#search-box").value.toLowerCase();
     let inp = document.querySelector("#searchBOX").value.toLowerCase();
     document.querySelector("#result").innerHTML = ""
@@ -39,6 +41,7 @@ const Header = () => {
     document.querySelector(".search-form").classList.remove("active");
     document.querySelector(".navbarActive").classList.remove("active");
     document.querySelector(".signContainer").classList.remove("active");
+    document.querySelector("#detailContainer").style = "display:none";
   }
   const sign = (e) => {
     e.preventDefault();
@@ -46,6 +49,7 @@ const Header = () => {
     document.querySelector(".search-form").classList.remove("active");
     document.querySelector(".navbarActive").classList.remove("active");
     document.querySelector(".loginContainer").classList.remove("active");
+    document.querySelector("#detailContainer").style = "display:none";
   }
   return (
     <>
