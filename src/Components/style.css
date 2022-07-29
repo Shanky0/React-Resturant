@@ -11,9 +11,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
     padding: 1.5rem 5%;
     background-color: black;
-    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -30,26 +30,18 @@ header {
     color: tomato;
 }
 
-.navbarActive {
-    transition: 300ms ease-out;
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    width: 10rem;
-    background: black;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    border-bottom-left-radius: 15px;
-    border-top-left-radius: 15px;
+.navbar h5 {
+    font-size: 1rem;
+    color: white;
 }
+
 
 #searc {
     position: relative;
 }
 
 #searc input {
-    width: 20rem;
+    width: 27rem;
     padding: .3rem;
     font-size: 1rem;
     outline: none;
@@ -67,21 +59,6 @@ header {
 
 #searc i:hover {
     color: tomato;
-}
-
-.navbarActive a {
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.navbarActive a:hover {
-    color: tomato;
-}
-
-.navbarActive.active {
-    right: 0;
-    transition: 300ms;
 }
 
 .logo span {
@@ -192,16 +169,107 @@ header .search-form label:hover {
 }
 
 /* Search Result */
-#sea{
+
+/* #sea{
+    position: sticky;
+} */
+
+#sea {
     position: absolute;
-    top:10%;
-    right:30%;
+    display: none;
+    z-index: 12300;
+    width: 27rem;
+    height: fit-content;
+    max-height: 10rem;
+    overflow-y: scroll;
+    top: -4%;
+    right: 34.8%;
     background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
 }
-#result li{
-list-style: none;
-color:rgb(93, 78, 182);
+
+/* Scrollbar Hidden Property Setting */
+/* #sea::-webkit-scrollbar { 
+    display: none;  
+} */
+
+#sea ul {
+    margin: 0;
+    padding: 0;
 }
+
+#result li {
+    list-style: none;
+    padding-left: .2rem;
+    padding-top: 0;
+    color: rgb(93, 78, 182);
+    cursor: pointer;
+    font-size: .8rem;
+    line-height: 2rem;
+}
+
+#result li:hover {
+    background-color: tomato;
+    transform:scaleY(1.1);
+}
+
+#detailContainer{
+    border: 1px solid white;
+    text-align: center;
+    background: black;
+    color: tomato;
+    padding: 2% 5%;
+    display: none;
+    opacity: .8;
+    border-radius: 20px;
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    right:10%;
+    overflow-y: scroll;
+    max-height: 70vh;
+}
+#detailContainer #addres{
+    display: flex;
+    justify-content: space-around;
+    color:white
+}
+#detailContainer #addres h6{
+    margin:1rem;
+    text-decoration: underline;
+}
+#opH{
+    width: 100%;
+    text-align: center;
+}
+ #opH li{
+   list-style: none;
+    margin-top: 10px;
+}
+#review{
+    margin-top: 20px;
+    width: 100%;
+}
+#review h4{
+    color:white;
+}
+#review h6{
+    color:rgb(93, 78, 182);
+}
+#review p{
+    margin-top: 10px;
+    color: white;
+}
+#review .fa-star{
+    color:gold;
+}
+#detailContainer::-webkit-scrollbar { 
+    display: none;  
+}
+
+
 
 /* Offers Section */
 #offer {
@@ -273,10 +341,37 @@ color:rgb(93, 78, 182);
     position: absolute;
     top: 5%;
     left: 500%;
-   
 }
-.loginContainer.active{
-    left:50%;
+
+.loginContainer:hover{
+    transform: scale(1.05);
+    transition: 300ms ease-in-out;
+}
+.loginUser i {
+    margin-left: 30px;
+    margin-right: 20px;
+    font-size: 1rem;
+}
+
+.loginUser i:hover {
+    color: red;
+}
+
+.fa-xmark {
+    display: inline;
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    top: 1%;
+    right: 4%;
+    cursor: pointer;
+}
+.fa-xmark:hover{
+    color:red;
+}
+
+.loginContainer.active {
+    left: 50%;
 }
 
 .login {
@@ -307,7 +402,8 @@ color:rgb(93, 78, 182);
     border-color: rgb(93, 78, 182);
     transform: scale(1.05);
 }
-.login-register-text a:hover{
+
+.login-register-text a:hover {
     text-decoration: underline;
     text-decoration-color: white;
 }
@@ -326,10 +422,15 @@ color:rgb(93, 78, 182);
     position: absolute;
     top: 2%;
     left: 500%;
-   
+
 }
-.signContainer.active{
-    left:50%;
+.signContainer:hover{
+    transform: scale(1.01);
+    transition: 300ms ease-in-out;
+}
+
+.signContainer.active {
+    left: 50%;
 }
 
 .sign {
@@ -360,21 +461,73 @@ color:rgb(93, 78, 182);
     border-color: rgb(93, 78, 182);
     transform: scale(1.05);
 }
+.navbarActive{
+    display: none;
+}
+/* Dynamic List styles */
+.list{
 
+}
 
 
 
 @media (max-width:550px) {
-    .loginContainer.active{
+
+    /* NavBar Settings for small screen */
+    .navbarActive {
+        transition: 300ms ease-out;
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 10rem;
+        height: 45vh;
+        background: black;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+    .navbarActive a {
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .navbarActive a:hover {
+        color: tomato;
+    }
+    
+    .navbarActive.active {
+        right: 0;
+        transition: 300ms;
+    }
+    .navbarActive h5{
+        color:white;
+        margin-top: -15%;
+        font-size: .9rem;
+        
+    }
+    .navbarActive .fa-right-from-bracket{
+        display: block;
+        margin-top: 10%;
+        color: white;
+    }
+    .navbarActive .fa-right-from-bracket:hover{
+        color:red;
+    }
+    .loginContainer.active {
         width: 90%;
         margin: auto;
-        left:5%;
+        left: 5%;
     }
-    .signContainer.active{
+
+    .signContainer.active {
         width: 90%;
         margin: auto;
-        left:5%;
+        left: 5%;
     }
+
     .icons {
         display: block;
     }
@@ -400,5 +553,36 @@ color:rgb(93, 78, 182);
         margin-top: 10%;
     }
 
+    #sea {
+        z-index: 12300;
+        position: absolute;
+        display: none;
+        width: 24.9rem;
+        height: fit-content;
+        max-height: 10rem;
+        overflow-y: scroll;
+        padding: .2rem 0;
+        font-size: 1rem;
+        top: 10.9%;
+        right: 3.5%;
+        background-color: white;
+    }
 
+    #sea ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    #result li {
+        list-style: none;
+        padding-left: .5rem;
+        padding-top: 0;
+        color: rgb(93, 78, 182);
+        cursor: pointer;
+        line-height: 2rem;
+    }
+
+    #result li:hover {
+        background-color: tomato;
+    }
 }
