@@ -3,6 +3,7 @@ import '../Components/style.css';
 import data from './test.json';
 
 const Header = () => {
+
   const input = () => {
     document.querySelector("#result").style.display = "block";
     document.querySelector("#detailContainer").style.display = "none";
@@ -17,16 +18,17 @@ const Header = () => {
       data.map(val => {
         if (val.name.toLowerCase().startsWith(inp || input) || val.neighborhood.toLowerCase().startsWith(inp || input) || val.cuisine_type.toLowerCase().startsWith(inp || input)) {
           const li = document.createElement("li");
-          li.innerHTML = `<li class="list"> ${val.name} - (${val.address})</li>`;
+          li.innerHTML = `<li className="list"> ${val.name} - (${val.address})</li>`;
           document.querySelector("#result").appendChild(li);
         }
       })
     }
   }
  
-  const search = () => {
-    document.querySelector('.search-box').value = "";
+  const searching = () => {
+
     document.querySelector('.search-form').classList.toggle("active");
+    document.querySelector('.search-box').value = "";
     document.querySelector("#sea").style.display = "none";
     document.querySelector('.navbarActive').classList.remove("active");
     document.querySelector("#detailContainer").style.display = "none";
@@ -63,9 +65,9 @@ const Header = () => {
           <a href="#main">home</a>
           <a href="#offer">Offers</a>
           <a href="#review">review</a>
-          <a href=".loginContainer" id="loginDText" onClick={login}>LogIN</a>
-          <a href=".signContainer" id="signDText" onClick={sign}>SignUP</a>
-          <h5 id="loginDUser"> </h5>
+          <a href=".loginC" id="loginDText" onClick={login}>LogIN</a>
+          <a href=".signC" id="signDText" onClick={sign}>SignUP</a>
+          <a href="=" id="logDout"> </a>
         </nav>
         {/* For NavBar on mobile screen */}
         <nav className="navbarActive">
@@ -75,11 +77,11 @@ const Header = () => {
           <a href="#contact">contact</a>
           <a href="=" id="loginText" onClick={login}>LogIN</a>
           <a href="=" id="signText" onClick={sign}>SignUP</a>
-          <h5 id="loginUser"> </h5>
+          <a href="=" id="logout"> </a>
         </nav>
         <div className="icons">
           <div></div>
-          <div className="fas fa-search" id="search-btn" onClick={search}></div>
+          <div className="fas fa-search" id="search-btn" onClick={searching}></div>
           <div className="fas fa-shopping-cart" id="cart-btn"></div>
           <div className="fas fa-bars" id="menu-btn" onClick={menu}></div>
         </div>
