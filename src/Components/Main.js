@@ -35,20 +35,20 @@ const Main = () => {
     const emailLog = document.querySelector("#emailLog").value.toLowerCase();
     const passlogin = document.querySelector("#passlogin").value;
     if (emailLog === "" || passlogin === "") {
-      document.querySelector("#warning").innerHTML = "* Fill all the fields ";
-      document.querySelector("#warning").style = "color:red;font-size:1.3rem;"
+      document.querySelector("#success").innerHTML = "Fill all the fields ";
+      document.querySelector("#success").style = "color:red;font-size:1.3rem;"
     } else {
       data.map((val) => {
         if (val.email === emailLog && val.pass === passlogin) {
           document.querySelector("#success").innerHTML = `Welcome ${val.name}`;
           document.querySelector("#success").style = "color:tomato;font-size:1.3rem;"
           document.querySelector(".loginContainer").classList.remove("active");
-          document.querySelector("#loginDText").innerHTML = "";
-          document.querySelector("#signDText").innerHTML = "";
-          document.querySelector("#loginDUser").innerHTML = `${val.name}<a href="="><i class="fa-solid fa-right-from-bracket"></i></a>`;
-          document.querySelector("#loginText").innerHTML = "";
-          document.querySelector("#signText").innerHTML = "";
-          document.querySelector("#loginUser").innerHTML = `${val.name}<a href="="><i class="fa-solid fa-right-from-bracket"></i></a>`;
+          document.querySelector("#loginDText").innerHTML = `${val.name}`;
+          document.querySelector("#signDText").style.display = "none";
+          document.querySelector("#logDout").innerHTML = `<i class="fa-solid fa-right-from-bracket"></i>`;
+          document.querySelector("#loginText").innerHTML = `${val.name}`;
+          document.querySelector("#signText").style.display="none";
+          document.querySelector("#logout").innerHTML = `<i class="fa-solid fa-right-from-bracket"></i>`;
         }
       })
     }
@@ -61,15 +61,15 @@ const Main = () => {
     const emailsign = document.querySelector("#emailsign").value.toLowerCase();
     const pass = document.querySelector("#pass").value;
     const confirm = document.querySelector("#confirm").value;
-    if (emailsign === "" || pass === "" || confirm === "") {
-      document.querySelector("#warning").innerHTML = "* Fill all the fields ";
-      document.querySelector("#warning").style = "color:red;font-size:1.3rem;"
+    if (nam==="" ||emailsign === "" || pass === "" || confirm === "") {
+      document.querySelector("#warn").innerHTML = "Fill all the fields ";
+      document.querySelector("#warn").style = "color:red;font-size:1.3rem;"
     } else if (pass !== confirm) {
-      document.querySelector("#warning").innerHTML = "Re-entered password didn't matched";
-      document.querySelector("#warning").style = "color:white;font-size:1rem;"
+      document.querySelector("#warn").innerHTML = "Re-entered password didn't matched";
+      document.querySelector("#warn").style = "color:red;font-size:1rem;"
     } else {
-      document.querySelector("#warning").innerHTML = `Thank You for Signing In. <h5> Please Login to enjoy services</h5>`;
-      document.querySelector("#warning").style = "color:green";
+      document.querySelector("#warn").innerHTML = `Thank You for Signing In. <h5> Please Login to enjoy services</h5>`;
+      document.querySelector("#warn").style = "color:green";
       document.querySelector("#emailsign").value = "";
       document.querySelector("#pass").value = "";
       document.querySelector("#confirm").value = "";
@@ -86,7 +86,7 @@ const Main = () => {
   const details = (e) => {
     var resname = (e.target.innerHTML).split("-");
 
-    document.querySelector("#result").style.display = "none";
+    document.querySelector("#sea").style.display = "none";
     document.querySelector(".signContainer").classList.remove("active");
     document.querySelector(".loginContainer").classList.remove("active");
     document.querySelector(".search-form").classList.remove("active");
@@ -102,7 +102,7 @@ const Main = () => {
         }
         document.getElementById("review").innerHTML = "";
         for (let e in val.reviews) {
-          document.getElementById("review").innerHTML += `<div><h4>Name: ${val.reviews[e].name}</h4><h6>Date:${val.reviews[e].date}  , Rating: ${val.reviews[e].rating} <i class="fa-solid fa-star"></i></h6><p>${val.reviews[e].comments}</p></div>`;
+          document.getElementById("review").innerHTML += `<div><h4>Name: ${val.reviews[e].name}</h4><h6>Date:${val.reviews[e].date}     Rating: ${val.reviews[e].rating} <i class="fa-solid fa-star"></i></h6><p>${val.reviews[e].comments}</p></div>`;
         }
       }
     })
@@ -124,10 +124,10 @@ const Main = () => {
         </div>
 
         {/* Login Section */}
-        <div className="loginContainer" >
+        <div className="loginContainer">
           <i className="fa-solid fa-xmark" onClick={cross}></i>
           <form className="login">
-            <p className="login-text" style={{ fontSize: "2rem", fontWeight: "800", marginBottom: "5%" }}>LOGIN</p>
+            <p className="login-text" style={{ fontSize: "2rem", fontWeight: "800", marginBottom: "5%" }}>Log In</p>
 
             <input type="email" placeholder="Email" name="email" id='emailLog' required />
 
@@ -147,7 +147,7 @@ const Main = () => {
             <input type="email" placeholder="Email" name="email" id='emailsign' required />
             <input type="password" placeholder="Password" name="password" id="pass" required />
             <input type="password" placeholder=" Re-Enter Password" name="password" id="confirm" required />
-            <p id="warning"></p>
+            <p id="warn"></p>
             <button name="submit" className="btn btnSign" onClick={signDetail} >SignUP</button>
             <p className="login-register-text">Already have an account? <a href="=" onClick={login}>Login Here ..</a></p>
           </form>
@@ -162,10 +162,13 @@ const Main = () => {
           </div>
 
           <div id="extra">
+          <h3 style={{color:"rgb(106, 86, 216)",textDecoration:"underline",marginTop:"1rem",marginBottom:"2rem",fontSize:"1.5rem"}}>Operating Hours</h3>
             <div id="opH">
 
             </div>
-            <div id="review">
+            <div >
+              <h3 style={{color:"rgb(106, 86, 216)",textDecoration:"underline",marginTop:"2rem",textTransform:"uppercase",fontSize:"1.5rem"}}>Review</h3>
+              <div id="review"></div>
 
 
             </div>
