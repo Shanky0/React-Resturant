@@ -3,7 +3,7 @@
 }
 
 section {
-    padding: 2rem 5%;
+    padding: 1rem 5%;
 }
 
 /* Header Section */
@@ -91,10 +91,9 @@ header {
     color: tomato;
 }
 
-header .search-form {
+header .search-form{
     position: absolute;
-    top: 101%;
-    right: 10%;
+    top: 100%;
     background: white;
     display: flex;
     align-items: center;
@@ -108,7 +107,7 @@ header .search-form.active {
 }
 
 header .search-form input {
-    width: 25rem;
+    width: 30rem;
     height: 100%;
     padding: 1rem;
     font-size: 1rem;
@@ -130,8 +129,8 @@ header .search-form label:hover {
 /* Main Section */
 
 .main {
-    margin-top: 15vh;
-    min-height: 100vh;
+    margin-top: 13vh;
+    min-height: 82vh;
     background: url("https://www.teahub.io/photos/full/283-2837480_high-resolution-restaurant-background-images-hd.jpg");
     background-repeat: no-repeat;
     background-size: 100vw 600px;
@@ -144,6 +143,7 @@ header .search-form label:hover {
 
 .content h3 {
     font-weight: 700;
+    font-size: 2.5rem;
     color: rgb(93, 78, 182);
 }
 
@@ -152,6 +152,8 @@ header .search-form label:hover {
 }
 
 .content h1 span {
+    font-weight: 800;
+    font-size: 3rem;
     color: tomato;
 }
 
@@ -182,8 +184,8 @@ header .search-form label:hover {
     height: fit-content;
     max-height: 10rem;
     overflow-y: scroll;
-    top: -4%;
-    right: 34.8%;
+    top: -1.5rem;
+    right: 32rem;
     background-color: white;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -231,6 +233,12 @@ header .search-form label:hover {
     overflow-y: scroll;
     max-height: 70vh;
 }
+#detailContainer h3{
+    font-size: 2rem;
+}
+#detailContainer h5{
+    color: white;
+}
 #detailContainer #addres{
     display: flex;
     justify-content: space-around;
@@ -238,7 +246,6 @@ header .search-form label:hover {
 }
 #detailContainer #addres h6{
     margin:1rem;
-    text-decoration: underline;
 }
 #opH{
     width: 100%;
@@ -246,6 +253,7 @@ header .search-form label:hover {
 }
  #opH li{
    list-style: none;
+   color: white;
     margin-top: 10px;
 }
 #review{
@@ -256,7 +264,7 @@ header .search-form label:hover {
     color:white;
 }
 #review h6{
-    color:rgb(93, 78, 182);
+    color:tomato;
 }
 #review p{
     margin-top: 10px;
@@ -280,7 +288,7 @@ header .search-form label:hover {
 #offer h1 {
     font-size: 2.5rem;
     color: white;
-    margin: 8vh 0;
+    margin: 5vh 0;
 }
 
 #offer h1 span {
@@ -326,6 +334,18 @@ header .search-form label:hover {
     text-decoration: line-through;
     font-weight: lighter;
 }
+#box-container .box .btn{
+    border: 1px solid white;
+    padding:.5rem 1rem;
+    margin:1rem 0rem ;
+    color:tomato;
+}
+#box-container .box .btn:hover{
+    border: 1px solid rgb(93, 78, 182);
+    color:green;
+    transform: scaleX(1.1);
+    transition: 200ms;
+}
 
 /* LogIn section */
 
@@ -345,7 +365,7 @@ header .search-form label:hover {
 
 .loginContainer:hover{
     transform: scale(1.05);
-    transition: 300ms ease-in-out;
+    transition: 100s ease-in-out;
 }
 .loginUser i {
     margin-left: 30px;
@@ -372,6 +392,7 @@ header .search-form label:hover {
 
 .loginContainer.active {
     left: 50%;
+    transition: 900ms;
 }
 
 .login {
@@ -381,7 +402,7 @@ header .search-form label:hover {
 }
 
 .login input {
-    width: "70%";
+    width: 80%;
     margin: auto;
     margin-bottom: 2rem;
     font-size: 1rem;
@@ -426,11 +447,12 @@ header .search-form label:hover {
 }
 .signContainer:hover{
     transform: scale(1.01);
-    transition: 300ms ease-in-out;
+    transition: 200ms ease-out;
 }
 
 .signContainer.active {
     left: 50%;
+    transition: 1s;
 }
 
 .sign {
@@ -440,7 +462,7 @@ header .search-form label:hover {
 }
 
 .sign input {
-    width: "70%";
+    width: 80%;
     margin: auto;
     margin-bottom: 2rem;
     font-size: 1rem;
@@ -464,10 +486,7 @@ header .search-form label:hover {
 .navbarActive{
     display: none;
 }
-/* Dynamic List styles */
-.list{
 
-}
 
 
 
@@ -489,7 +508,7 @@ header .search-form label:hover {
         border-top-left-radius: 15px;
     }
     .navbarActive a {
-        color: white;
+        color:white;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -508,14 +527,7 @@ header .search-form label:hover {
         font-size: .9rem;
         
     }
-    .navbarActive .fa-right-from-bracket{
-        display: block;
-        margin-top: 10%;
-        color: white;
-    }
-    .navbarActive .fa-right-from-bracket:hover{
-        color:red;
-    }
+   
     .loginContainer.active {
         width: 90%;
         margin: auto;
@@ -557,14 +569,14 @@ header .search-form label:hover {
         z-index: 12300;
         position: absolute;
         display: none;
-        width: 24.9rem;
+        width: 29.9rem;
         height: fit-content;
         max-height: 10rem;
         overflow-y: scroll;
         padding: .2rem 0;
         font-size: 1rem;
-        top: 10.9%;
-        right: 3.5%;
+        top: 10.5%;
+        right: 3.1%;
         background-color: white;
     }
 
@@ -585,4 +597,9 @@ header .search-form label:hover {
     #result li:hover {
         background-color: tomato;
     }
+    #detailContainer{
+        left:2%;
+        right: 2%;
+    }
+
 }
