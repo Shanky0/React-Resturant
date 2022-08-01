@@ -1,6 +1,6 @@
 import React from 'react';
 import data from './Data.json';
-import test from './test.json';
+
 
 const Main = () => {
 
@@ -13,13 +13,14 @@ const Main = () => {
     document.querySelector(".signContainer").classList.remove("active");
   }
   const cross = () => {
+    document.querySelector("#detailContainer").style = "display:none";
     document.querySelector(".signContainer").classList.remove("active");
     document.querySelector(".loginContainer").classList.remove("active");
     document.querySelector("#emailsign").value = "";
     document.querySelector("#pass").value = "";
     document.querySelector("#confirm").value = "";
     document.querySelector("#warning").style = "display:none";
-    document.querySelector("#detailContainer").style = "display:none";
+    
   }
   const sign = (e) => {
     e.preventDefault();
@@ -81,32 +82,7 @@ const Main = () => {
     }
   }
 
-  // Details of Selected Resturant
-
-  const details = (e) => {
-    var resname = (e.target.innerHTML).split("-");
-
-    document.querySelector("#sea").style.display = "none";
-    document.querySelector(".signContainer").classList.remove("active");
-    document.querySelector(".loginContainer").classList.remove("active");
-    document.querySelector(".search-form").classList.remove("active");
-    document.querySelector("#detailContainer").style = "display:block";
-
-    test.map((val) => {
-      if (val.name.trim() === resname[0].trim()) {
-        document.getElementById("abou").innerHTML = `<h3>${val.name}</h3> <h5>Cuisine : ${val.cuisine_type}</h5>`;
-        document.getElementById('addres').innerHTML = `<h6>Address: ${val.address}</h6> <h6>Neighbourhood : ${val.neighborhood}</h6>`;
-        document.getElementById("opH").innerHTML = "";
-        for (let e in val.operating_hours) {
-          document.getElementById("opH").innerHTML += `<li> ${e} : ${val.operating_hours[e]}</li>`;
-        }
-        document.getElementById("review").innerHTML = "";
-        for (let e in val.reviews) {
-          document.getElementById("review").innerHTML += `<div><h4>Name: ${val.reviews[e].name}</h4><h6>Date:${val.reviews[e].date}     Rating: ${val.reviews[e].rating} <i class="fa-solid fa-star"></i></h6><p>${val.reviews[e].comments}</p></div>`;
-        }
-      }
-    })
-  }
+ 
 
   return (
     <>
@@ -117,11 +93,6 @@ const Main = () => {
           <a href=".about" className='btn'> Know About<span> US</span> </a>
         </div>
 
-        {/* Search Result */}
-        <div id="sea">
-          <ul id="result" onClick={details}>
-          </ul>
-        </div>
 
         {/* Login Section */}
         <div className="loginContainer">

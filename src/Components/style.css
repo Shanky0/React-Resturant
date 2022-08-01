@@ -18,6 +18,8 @@ header {
     right: 0;
     left: 0;
     z-index: 123;
+    min-height: 13vh;
+    max-height: 20vh;
 }
 
 .navbar a {
@@ -34,7 +36,6 @@ header {
     font-size: 1rem;
     color: white;
 }
-
 
 #searc {
     position: relative;
@@ -91,7 +92,7 @@ header {
     color: tomato;
 }
 
-header .search-form{
+header .search-form {
     position: absolute;
     top: 100%;
     background: white;
@@ -129,11 +130,11 @@ header .search-form label:hover {
 /* Main Section */
 
 .main {
-    margin-top: 13vh;
-    min-height: 82vh;
+    margin-top: 5rem;
+    min-height: 90vh;
     background: url("https://www.teahub.io/photos/full/283-2837480_high-resolution-restaurant-background-images-hd.jpg");
     background-repeat: no-repeat;
-    background-size: 100vw 600px;
+    background-size: cover;
     position: relative;
 }
 
@@ -172,20 +173,17 @@ header .search-form label:hover {
 
 /* Search Result */
 
-/* #sea{
-    position: sticky;
-} */
-
 #sea {
     position: absolute;
     display: none;
     z-index: 12300;
-    width: 27rem;
     height: fit-content;
     max-height: 10rem;
     overflow-y: scroll;
-    top: -1.5rem;
-    right: 32rem;
+    margin-top: 10vh;
+    width:27.2rem;
+    top:1.5vh;
+    right: 37%;
     background-color: white;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -214,10 +212,10 @@ header .search-form label:hover {
 
 #result li:hover {
     background-color: tomato;
-    transform:scaleY(1.1);
+    transform: scaleY(1.1);
 }
 
-#detailContainer{
+#detailContainer {
     border: 1px solid white;
     text-align: center;
     background: black;
@@ -227,54 +225,66 @@ header .search-form label:hover {
     opacity: .8;
     border-radius: 20px;
     position: absolute;
-    top: 5%;
+    top: 15%;
     left: 10%;
-    right:10%;
+    right: 10%;
     overflow-y: scroll;
     max-height: 70vh;
 }
-#detailContainer h3{
+
+#detailContainer h3 {
     font-size: 2rem;
 }
-#detailContainer h5{
+
+#detailContainer h5 {
     color: white;
 }
-#detailContainer #addres{
+
+#detailContainer #addres {
     display: flex;
     justify-content: space-around;
-    color:white
+    color: white
 }
-#detailContainer #addres h6{
-    margin:1rem;
+
+#detailContainer #addres h6 {
+    margin: 1rem;
 }
-#opH{
+
+#opH {
     width: 100%;
     text-align: center;
 }
- #opH li{
-   list-style: none;
-   color: white;
+
+#opH li {
+    list-style: none;
+    color: white;
     margin-top: 10px;
 }
-#review{
+
+#review {
     margin-top: 20px;
     width: 100%;
 }
-#review h4{
-    color:white;
+
+#review h4 {
+    color: white;
 }
-#review h6{
-    color:tomato;
+
+#review h6 {
+    color: tomato;
 }
-#review p{
+
+#review p {
     margin-top: 10px;
     color: white;
 }
-#review .fa-star{
-    color:gold;
+
+#review .fa-star {
+    color: gold;
 }
-#detailContainer::-webkit-scrollbar { 
-    display: none;  
+
+#detailContainer::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -314,6 +324,7 @@ header .search-form label:hover {
 }
 
 #box-container .box img {
+    max-width: 12rem;
     height: 10rem;
 }
 
@@ -334,15 +345,17 @@ header .search-form label:hover {
     text-decoration: line-through;
     font-weight: lighter;
 }
-#box-container .box .btn{
+
+#box-container .box .btn {
     border: 1px solid white;
-    padding:.5rem 1rem;
-    margin:1rem 0rem ;
-    color:tomato;
+    padding: .5rem 1rem;
+    margin: 1rem 0rem;
+    color: tomato;
 }
-#box-container .box .btn:hover{
+
+#box-container .box .btn:hover {
     border: 1px solid rgb(93, 78, 182);
-    color:green;
+    color: green;
     transform: scaleX(1.1);
     transition: 200ms;
 }
@@ -359,14 +372,15 @@ header .search-form label:hover {
     opacity: .8;
     border-radius: 20px;
     position: absolute;
-    top: 5%;
+    top: 15%;
     left: 500%;
 }
 
-.loginContainer:hover{
+.loginContainer:hover {
     transform: scale(1.05);
-    transition: 100s ease-in-out;
+
 }
+
 .loginUser i {
     margin-left: 30px;
     margin-right: 20px;
@@ -386,13 +400,13 @@ header .search-form label:hover {
     right: 4%;
     cursor: pointer;
 }
-.fa-xmark:hover{
-    color:red;
+
+.fa-xmark:hover {
+    color: red;
 }
 
 .loginContainer.active {
     left: 50%;
-    transition: 900ms;
 }
 
 .login {
@@ -441,18 +455,17 @@ header .search-form label:hover {
     opacity: .8;
     border-radius: 20px;
     position: absolute;
-    top: 2%;
+    top: 15%;
     left: 500%;
-
 }
-.signContainer:hover{
+
+.signContainer:hover {
     transform: scale(1.01);
-    transition: 200ms ease-out;
+
 }
 
 .signContainer.active {
     left: 50%;
-    transition: 1s;
 }
 
 .sign {
@@ -483,7 +496,13 @@ header .search-form label:hover {
     border-color: rgb(93, 78, 182);
     transform: scale(1.05);
 }
-.navbarActive{
+
+.navbarActive {
+    display: none;
+}
+
+#sea,
+#result {
     display: none;
 }
 
@@ -507,27 +526,29 @@ header .search-form label:hover {
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
     }
+
     .navbarActive a {
-        color:white;
+        color: white;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
+
     .navbarActive a:hover {
         color: tomato;
     }
-    
+
     .navbarActive.active {
         right: 0;
         transition: 300ms;
     }
-    .navbarActive h5{
-        color:white;
+
+    .navbarActive h5 {
+        color: white;
         margin-top: -15%;
         font-size: .9rem;
-        
+
     }
-   
+
     .loginContainer.active {
         width: 90%;
         margin: auto;
@@ -569,14 +590,14 @@ header .search-form label:hover {
         z-index: 12300;
         position: absolute;
         display: none;
-        width: 29.9rem;
         height: fit-content;
         max-height: 10rem;
         overflow-y: scroll;
         padding: .2rem 0;
         font-size: 1rem;
-        top: 10.5%;
-        right: 3.1%;
+        top: 15vh;
+        left: 2.2rem;
+        width: 30rem;
         background-color: white;
     }
 
@@ -597,8 +618,9 @@ header .search-form label:hover {
     #result li:hover {
         background-color: tomato;
     }
-    #detailContainer{
-        left:2%;
+
+    #detailContainer {
+        left: 2%;
         right: 2%;
     }
 

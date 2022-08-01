@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Components/style.css';
 import data from './test.json';
+import test from './test.json';
 
 const Header = () => {
 
@@ -53,6 +54,34 @@ const Header = () => {
     document.querySelector(".loginContainer").classList.remove("active");
     document.querySelector("#detailContainer").style = "display:none";
   }
+
+   // Details of Selected Resturant
+
+   const details = (e) => {
+    var resname = (e.target.innerHTML).split("-");
+
+    document.querySelector("#sea").style.display = "none";
+    document.querySelector(".signContainer").classList.remove("active");
+    document.querySelector(".loginContainer").classList.remove("active");
+    document.querySelector(".search-form").classList.remove("active");
+    document.querySelector("#detailContainer").style = "display:block";
+
+    test.map((val) => {
+      if (val.name.trim() === resname[0].trim()) {
+        document.getElementById("abou").innerHTML = `<h3>${val.name}</h3> <h5>Cuisine : ${val.cuisine_type}</h5>`;
+        document.getElementById('addres').innerHTML = `<h6>Address: ${val.address}</h6> <h6>Neighbourhood : ${val.neighborhood}</h6>`;
+        document.getElementById("opH").innerHTML = "";
+        for (let e in val.operating_hours) {
+          document.getElementById("opH").innerHTML += `<li> ${e} : ${val.operating_hours[e]}</li>`;
+        }
+        document.getElementById("review").innerHTML = "";
+        for (let e in val.reviews) {
+          document.getElementById("review").innerHTML += `<div><h4>Name: ${val.reviews[e].name}</h4><h6>Date:${val.reviews[e].date}     Rating: ${val.reviews[e].rating} <i class="fa-solid fa-star"></i></h6><p>${val.reviews[e].comments}</p></div>`;
+        }
+      }
+    })
+  }
+
   return (
     <>
       <header className="header">
@@ -69,6 +98,11 @@ const Header = () => {
           <a href=".signC" id="signDText" onClick={sign}>SignUP</a>
           <a href="=" id="logDout"> </a>
         </nav>
+         {/* Search Result */}
+         <div id="sea">
+          <ul id="result" onClick={details}>
+          </ul>
+        </div>
         {/* For NavBar on mobile screen */}
         <nav className="navbarActive">
           <a href="#home">home</a>
